@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>All-In-One Online Store</title>
+
+<style>
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+header { background: #333; color: white; padding: 15px; text-align: center; }
+nav a { color: white; margin: 0 15px; cursor: pointer; }
+section { display: none; padding: 20px; }
+.active { display: block; }
+
+/* Product Grid */
+.products { display: flex; flex-wrap: wrap; }
+.product {
+    width: 250px; border: 1px solid #ccc; margin: 10px;
+    padding: 15px; text-align: center;
+}
+.product img { width: 100%; }
+button { padding: 10px 15px; background: #28a745; color: white;
+    border: none; cursor: pointer; margin-top: 10px;
+}
+button:hover { background: #218838; }
+
+/* Cart Table */
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { border: 1px solid #ccc; padding: 10px; }
+
+/* Checkout Form */
+input {
+    width: 100%; padding: 10px; margin: 10px 0;
+}
+.checkout-btn { background: #007bff !important; }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Urban Haven🛒</h1>
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('cart')">Cart</a>
+        <a onclick="showPage('checkout')">Checkout</a>
+    </nav>
+</header>
+
+
+
+<!-- ---------------- HOME PAGE ---------------- -->
+<section id="home" class="active">
+    <h2>Products</h2>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="https://caslay.in/cdn/shop/files/4M6A6955_aa3135f0-e5bb-4ab9-8961-b0f66c41f144.jpg?v=1761468045&width=1946">
+            <h3>Blue T-Shirt</h3>
+            <p>$20.00</p>
+            <button onclick="addToCart('Blue T-Shirt', 20)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://www.lapcare.com/cdn/shop/files/1_6122ca29-5373-4c4f-97c2-0728ea368fc1.webp?v=1757326029&width=2048">
+            <h3>Wireless Headphones</h3>
+            <p>$45.00</p>
+            <button onclick="addToCart('Wireless Headphones', 45)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://brownliving.in/cdn/shop/files/terracotta-kohinoor-jumbo-mug-handcrafted-natural-clay-large-mug-jm-7-the-handicraftian-pack-of-2-mugs-9760203.jpg?v=1763573385">
+            <h3>Handmade Mug</h3>
+            <p>$12.00</p>
+            <button onclick="addToCart('Handmade Mug', 12)">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- ---------------- CART PAGE ---------------- -->
+<section id="cart">
+    <h2>Your Cart</h2>
+
+    <table>
+        <thead>
+            <tr><th>Product</th><th>Price</th></tr>
+        </thead>
+        <tbody id="cart-items"></tbody>
+    </table>
+
+    <h2>Total: $<span id="total">0</span></h2>
+
+    <button class="checkout-btn" onclick="showPage('checkout')">Proceed to Checkout</button>
+</section>
+
+
+
+<!-- ---------------- CHECKOUT PAGE ---------------- -->
+<section id="checkout">
+    <h2>Checkout</h2>
+
+    <label>Name</label>
+    <input type="text" id="name">
+
+    <label>Email</label>
+    <input type="email" id="email">
+
+    <label>Address</label>
+    <input type="text" id="address">
+
+    <label>Card Number</label>
+    <input type="text" id="card">
+
+    <button class="checkout-btn" onclick="completeOrder()">Place Order</button>
+</section>
+
+
+
+
+
+</body>
+</html>
+
+</body>
+</html>
